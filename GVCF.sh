@@ -13,9 +13,9 @@ conda activate gatk4
 cd /data/proj2/home/students/h.tan/plantPathogenData/Ztritici
 cd ZT_GVCF_Retry
 for bam_file in ../ZT_bams/ZT_*.bam; do
-    filename=$(basename "$bam_file".bam)
+    filename=$(basename $bam_file .bam)
     gatk  HaplotypeCaller \
-	  -R Ref\
+	  -R $Ref\
 	  -I "$bam_file" \
 	  -O "${filename}.g.vcf.gz" \
 	  -ERC GVCF --output-mode EMIT_ALL_SITES 
