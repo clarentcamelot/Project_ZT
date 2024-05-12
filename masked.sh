@@ -13,7 +13,7 @@ Ref="/data/proj2/home/students/h.tan/plantPathogenData/Ztritici/ZT_ref/GCF_00021
 cd /data/proj2/home/students/h.tan/plantPathogenData/Ztritici
 cd ZT_VCF_fin
 gatk CombineGVCFs \
-   -R Ref \
+   -R $Ref \
    --variant ../ZT_GVCF/ZT_001.g.vcf.gz \
    --variant ../ZT_GVCF/ZT_001.g.vcf.gz \
    --variant ../ZT_GVCF/ZT_002.g.vcf.gz \
@@ -38,12 +38,12 @@ gatk CombineGVCFs \
    -O ZT_cohort.g.vcf.gz
 
 gatk --java-options "-Xmx4g" GenotypeGVCFs \
-   -R Ref \
+   -R $Ref \
    -V ZT_cohort.g.vcf.gz \
    -O ZT_final.vcf.gz
 
 gatk --java-options "-Xmx4g" GenotypeGVCFs \
-   -R Ref \
+   -R $Ref \
    -V ZT_cohort.g.vcf.gz \
    --include-non-variant-sites \
    --sites-only-vcf-output \
