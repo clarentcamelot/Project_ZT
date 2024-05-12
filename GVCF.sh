@@ -18,5 +18,5 @@ for bam_file in ../ZT_bams/ZT_*.bam; do
 	  -R $Ref\
 	  -I "$bam_file" \
 	  -O "${filename}.g.vcf.gz" \
-	  -ERC GVCF --output-mode EMIT_ALL_SITES 
+	  -ERC GVCF --output-mode EMIT_ALL_ACTIVE_SITES
 done
